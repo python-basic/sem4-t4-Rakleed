@@ -111,6 +111,32 @@ print(odd_numbers)
 
 # [Вариативная самостоятельная работа № 4](https://repl.it/@Rakleed/programming4-indepworkvar4)
 ```python
+"""
+    Автор: Моисеенко Павел, группа № 1, подгруппа № 2.
 
+    ВСР 4. Задание: создать программу с реализацией вручную одного
+    из алгоритмов сортировки (вставки, плавной сортировки).
+
+"""
+
+from random import randint
+
+
+def insertion_sort(nums):
+    for i in range(len(nums)):
+        j = i - 1
+        key = nums[i]
+        while nums[j] > key and j >= 0:
+            nums[j + 1] = nums[j]
+            j -= 1
+        nums[j + 1] = key
+    return nums
+
+
+array = []
+for i in range(10):
+    array.append(randint(0, 20))
+print("Массив со случайными целыми числами:", array)
+print("Сортировка вставками:", insertion_sort(array))
 ```
 ![Result of indepworkvar4](src/programming4-indepworkvar4-result.png)
